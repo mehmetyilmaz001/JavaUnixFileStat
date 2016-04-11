@@ -1,0 +1,43 @@
+FileStat - A Java interface for picking up detailed file information
+under Linux/Unix. It really collects every bit of information there is.
+
+The package is offered without restrictions on its use, but also WITHOUT
+WARRANTIES OF ANY KIND. Care has been taken to ensure the enclosed
+software works correctly, but bugs may remain. Feedback, incuding
+problem reports, is welcome.
+
+The interface uses native code to call 'stat(2)' and 'lstat(2)'. This
+means you have to compile the package on your box to make it work.  You
+must have gcc (or some other C compiler) and preferably make.
+
+In the best of worlds, 'make' or 'make all' is the only command you
+have to run. This is not a very streamlined package, so be prepared for
+one or two bumps on the road.
+
+After successful compilation, copy or symlink 'filestat.so' to one of
+the directories in the Java property 'java.library.path'. Then test
+the package by running the following command on one or more sample
+file paths:
+
+java -jar lib/filestat.jar <file path 1> <file path 2> ...
+
+Java classes:
+
+se.soderstrom.linux.FileStat
+   The class to import and use from Java code. See the comments in the
+   source code.
+
+se.soderstrom.linux.SyscallException
+   Exception thrown by methods in the FileStat class if the OS does not
+   allow you to get file information. Among other things it contains
+   the good old errno.
+
+se.soderstrom.linux.TestFileStat
+   A class for testing FileStat. Also the class invoked if you run
+   'java -jar' on filestat.jar. The main program expects one or more
+   file paths to examine. It picks up and prints full information about
+   those files. Then it runs the 'stat' Linux/Unix command. This allows
+   you to check that the Java class really got it right.
+
+Enjoy,
+Hakan Soderstrom, info@soderstrom.se

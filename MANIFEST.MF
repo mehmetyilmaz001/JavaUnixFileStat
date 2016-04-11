@@ -1,0 +1,4 @@
+Main-Class: se.soderstrom.linux.TestFileStat
+Bundle-Name: FileStat - Linux/Unix detailed file information for Java
+Bundle-Vendor: Soderstrom Programvaruverkstad AB, www.soderstrom.se
+Bundle-Version: 1.0 2010-08-26
